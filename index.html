@@ -368,5 +368,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	formId: "29077f0d-fa7f-4924-a7c5-d693aca578ee"
 });
 </script>
+
+<script>
+
+window._pcq = window._pcq || [ ];
+
+_pcq.push(['APIReady', callbackFunction]);
+
+
+function callbackFunction() 
+{
+
+      console.log(pushcrew.subscriberId); 
+
+
+if (window.timerZ) clearInterval(window.timerZ);
+
+window.timerZ = setInterval(function() 
+{
+            
+if (document.querySelector("#hs-form-iframe-0") != null) 
+{
+
+var x = document.querySelector("#hs-form-iframe-0");
+
+x.contentWindow.document.getElementsByName('subscriberid')[0].setAttribute('value',pushcrew.subscriberId);
+
+                
+clearInterval(window.timerZ);
+            
+}
+
+})
+                            }
+
+                            
+	</script>
+
+
 </body>
 </html>		 
