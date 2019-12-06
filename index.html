@@ -372,35 +372,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>
 
 window._pcq = window._pcq || [ ];
-
 _pcq.push(['APIReady', callbackFunction]);
-
-
 function callbackFunction() 
 {
 
-      console.log(pushcrew.subscriberId); 
 
+_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); 
+
+function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+    console.log('User got successfully subscribed.');
+
+    console.log(subscriberId); //will output the user's subscriberId
 
 if (window.timerZ) clearInterval(window.timerZ);
-
 window.timerZ = setInterval(function() 
 {
             
 if (document.querySelector("#hs-form-iframe-0") != null) 
 {
-
 var x = document.querySelector("#hs-form-iframe-0");
-
 x.contentWindow.document.getElementsByName('subscriberid')[0].setAttribute('value',pushcrew.subscriberId);
-
                 
 clearInterval(window.timerZ);
             
 }
-
 })
+}
+
+function callbackFunctionOnFailedSubscription(values) {
+    console.log('User could not get subscribed to push notifications');
+
+    console.log(values.status); 
+
+    
+}
+
+                            
+
+    
+
                             }
+
+
+
+
+
 
                             
 	</script>
