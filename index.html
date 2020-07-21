@@ -20,6 +20,17 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 <!-- Start VWO Async Smartcode -->
+
+<script>
+window.VWO = window.VWO || [];
+
+VWO.push(['onEventReceive', 'vA', function (data) {
+
+console.log(VWO.data.vin.uuid);
+}]);
+	</script>
+
+
 <script type='text/javascript'>
 window._vwo_code = window._vwo_code || (function(){
 var account_id=420832,
